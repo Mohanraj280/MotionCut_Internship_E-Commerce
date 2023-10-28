@@ -1,0 +1,111 @@
+body{
+    margin: 0%;
+    padding:0%;
+}
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Poppins',sans-serif;
+    box-sizing: border-box;
+}
+.container{
+    position: static;
+    color: #000000;
+    z-index: var(--z-fixed);
+    background-color: #ffffff;
+    box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
+    padding:1px 1%;
+}
+
+.logo{
+    margin:1%;
+    
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+.logo{
+    width: 200px;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a{
+    color: #2b2a2a;
+    text-decoration: none;
+    font-size: 20px;
+    position: relative;
+    font-weight: bold;
+    
+}
+
+
+
+.header{
+    position:fixed;
+    width:100%;
+    background-size: cover;
+    background-position: center;
+}
+
+
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ffff00;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after{
+    width:100%;
+}
+
+.background{
+    height:100%;
+    width:100%;   
+    object-fit: contain;
+
+}
+
+.box{
+    position:relative;
+    height: 90vh;
+    margin-left: 30%;
+    border-radius: 10px;
+    width:40vw;
+    border-color: #000000;
+    padding: 10px 10px;
+    border: rgb(203, 248, 248) solid 9px;
+    box-shadow: 3px 3px 20px rgb(86, 79, 79);
+    background-color: rgb(255, 255, 255);
+}
+
+#uploadForm {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(4, 2, 2, 0.1);
+    max-width: 400px;
+    width: 100%;
+}

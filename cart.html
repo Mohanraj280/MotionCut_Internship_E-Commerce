@@ -1,0 +1,124 @@
+<!-- cart.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Cart</title>
+  <link rel="icon" href="ecom.jpeg" type="image/x-icon">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <link rel="stylesheet" href="cart.css">
+  <link rel="stylesheet" href="home.css">
+ 
+</head>
+<body>
+  
+  <h1 align="center" style="color:#ffc200;font-size: 50px;"><i>Flipkart</i></h1>
+  <h1 align="center" style="color:black;">My Cart</h1>
+  <ul id="cart-items"></ul>
+  <br>
+
+  <p id="final">Total Amount: <input type="text" placeholder="Amount to be paid" id="total" size="20" disabled/>&emsp;<button id="place">Place Order</button></p>
+ 
+
+
+  
+  <section id="footer">
+    <div>
+      <li class="heading">About</li>
+      <li>About Us</li>
+      <li>Career</li>
+      <li>Flipkart Stories</li>
+      <li>Cleartrip</li>
+    </div>
+    <div>
+      <li class="heading">Help</li>
+      <li>About Us</li>
+      <li>Career</li>
+      <li>Flipkart Stories</li>
+      <li>Cleartrip</li>
+    </div>
+    <div>
+      <li class="heading">CONUSMER POLICY</li>
+      <li>About Us</li>
+      <li>Career</li>
+      <li>Flipkart Stories</li>
+      <li>Cleartrip</li>
+    </div>
+    <div>
+      <li class="heading">Social</li>
+      <li>Instagram</li>
+      <li>LinkedIn</li>
+      <li>Facebook</li>
+      <li>X</li>
+    </div>
+    <div>
+      <li class="heading">Address</li>
+      <li>About Us</li>
+      <li>Career</li>
+      <li>Flipkart Stories</li>
+      <li>Cleartrip</li>
+    </div>
+    <div>
+      <li class="heading">Contact us</li>
+      <li>About Us</li>
+      <li>Career</li>
+      <li>Flipkart Stories</li>
+      <li>Cleartrip</li>
+    </div>
+  </section>
+
+
+  <script>
+    var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    var k=0;
+    function removeItem(index) {
+      cartItems.splice(index, 1);
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+      renderCart();
+    }
+
+    function renderCart() {
+      var cartItemsList = document.getElementById('cart-items');
+      while (cartItemsList.firstChild) {
+        cartItemsList.removeChild(cartItemsList.firstChild);
+      }
+      cartItems.forEach(function(item, index) {
+        var listItem = document.createElement('li');
+    
+        var productImage = document.createElement('img');
+        productImage.src = item.image;
+        productImage.className = 'product-image';
+        listItem.appendChild(productImage);
+    
+        var productInfo = document.createElement('p');
+        productInfo.textContent =  item.name ;
+        listItem.appendChild(productInfo);
+        var productInfo = document.createElement('p');
+        productInfo.textContent =  'Store Location: '+item.acc ;
+        listItem.appendChild(productInfo);
+        var productInfo = document.createElement('p');
+        productInfo.textContent =  'Price: '+item.price ;
+        listItem.appendChild(productInfo);
+        var productInfo=document.createElement('br');
+        listItem.appendChild(productInfo);
+    
+        var removeButton = document.createElement('button');
+        removeButton.textContent = 'Remove';
+        removeButton.addEventListener('click', function() {
+          removeItem(index);
+        });
+        listItem.appendChild(removeButton);
+    
+        cartItemsList.appendChild(listItem);
+
+        k=k+item.price;
+      });
+    }
+    
+
+    renderCart();
+    document.getElementById('total').value=k;
+  </script>
+</body>
+</html>

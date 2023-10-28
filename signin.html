@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="icon" href="ecom.jpeg" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+  <div id="container"></div>
+   
+  <div id="outerbox">
+    <div id="innerbox">
+           <div class="leftinnerbox">
+            <p class="para1">Login
+              </p>
+              <p class="para2">Get access to your Orders, Wishlist and Recommendations</p>
+           <div style="display: flex;flex-direction: column;align-items: center;justify-content: center;margin-top: 30px;width: 75%;">
+            <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/login_img_c4a81e.png" alt="hero_signup">
+           </div>
+            </div>
+
+
+            <div class="container">
+              <div class="screen">
+                <div class="screen__content">
+                  <form class="login">
+                    <h1>Sign In</h1>
+                    <div class="login__field">
+                      <i class="login__icon fas fa-user"></i>
+                      
+                      <input type="text" class="login__input" id="user" placeholder="User name" name="username" required/>
+                    </div>
+                    <div class="login__field">
+                      <i class="login__icon fas fa-lock"></i>
+          
+                      <input id="password" type="password" name="password" class="login__input" placeholder="Password" required />
+                    </div>
+                    <div class="login__field">
+                      <i class="login__icon fas fa-user"></i>
+                      
+                      <input type="text" class="login__input" placeholder="Mobile Number" name="mobile" required/>
+                    </div>
+                    <br>
+                    <input class="button__icon fas fa-calendar" id="button" type="button" value="Login" onClick="display(this.form)"/>
+                    <br><br>
+                    <br><br>
+                    <br><a href="#" style="text-decoration: none; color: black;"><div>New to Flipkart? Create an account</div></a>
+                    
+                  </form>
+          
+                </div>
+                <div class="screen__background">
+                  <span class="screen__background__shape screen__background__shape4"></span>
+                  <span class="screen__background__shape screen__background__shape3"></span>
+                  <span class="screen__background__shape screen__background__shape2"></span>
+                  <span class="screen__background__shape screen__background__shape1"></span>
+                </div>
+              </div>
+            </div>
+           
+    </div>
+  </div>
+  
+  <script type="text/javascript">
+    var input = document.getElementById("password");
+    
+    
+    function display(form) {
+      var input = document.getElementById("user");
+        var value = input.value;
+      if (form.username.value == "mohanrajselvamani52@gmail.com") {
+        if (form.password.value == "123456") {
+          location = "product.html"
+        } else {
+          alert("Invalid Password")
+        }
+      } else {
+        alert("Invalid Username")
+      }
+      localStorage.setItem('myValue', value);
+      window.location.href = 'product.html';
+    }
+
+    
+
+    
+  </script>
+  
+  
+</body>
+</html>
